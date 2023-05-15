@@ -1,11 +1,13 @@
-const instructions = ['E>K','K>L','L>A','T>E'];
+const instructions = ['E>S','A>R','A<S','R>I','I>O','B>E','O>N'];
 let tring ="";
 
 //gadagvyavs ert did stringshi
 
 function newString(array){
-    array.forEach(element => {
-        tring = tring + element[0] + element[2];
+    array.forEach(element => {if(element[1]==='<')
+    {
+        tring=tring + element[2] + element [0]
+    }else{tring = tring + element[0] + element[2];}
         
     });
 }
@@ -27,23 +29,22 @@ function sliceing(string , index){
 }
 
 //sliceing funqciit shegvidzlia string movacilot xolme zedmeti asoebi
-
+for(let j = 0; j<=newArray.length; j++){
 for(let i = 0;i<=tring.length;i++){
     //tu pirvel 
     if(newArray[0]===tring[i]){
         newArray.unshift(tring[i-1])
         tring=sliceing(tring , i);
         tring=sliceing(tring , i-1);
-        i=0;
-    }
-    if(newArray[newArray.length-1]===tring[i]){
+    }else if(newArray[newArray.length-1]===tring[i]){
         newArray.push(tring[i+1]);
         tring=sliceing(tring , i);
         tring=sliceing(tring , i);
-        i=0;
+        
     }
 }
-
+}
+console.log(tring);
 tring=newArray.join('');
 
 console.log(tring);
