@@ -44,7 +44,6 @@ for(let i = 0;i<=tring.length;i++){
     }
 }
 }
-console.log(tring);
 tring=newArray.join('');
 
 console.log(tring);
